@@ -19,7 +19,7 @@ const Navbar = () => {
     >
       <ul className="flex items-center justify-between gap-[28px] w-full">
         <li className="text-xl text-white font-medium leading-[28px] px-[18px] py-[12px] rounded-[8px] hover:bg-[#202630] transition">
-          <a href="#">Home</a>
+          <a href="#">FAIZ</a>
         </li>
         <li className="text-xl text-white font-medium leading-[28px] px-[18px] py-[12px] rounded-[8px] hover:bg-[#202630] transition">
           <a href="#about-me">About</a>
