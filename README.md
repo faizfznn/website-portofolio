@@ -1,4 +1,4 @@
-# Website Portofolio Pribadi - Faiz Fauzan TEST
+# Website Portofolio Pribadi - Faiz Fauzan
 
 Ini adalah repositori untuk website portofolio pribadi saya, yang dirancang untuk menampilkan proyek, pengalaman, dan keahlian saya di bidang pengembangan perangkat lunak. Website ini dibangun menggunakan teknologi web modern untuk memberikan pengalaman pengguna yang cepat, responsif, dan interaktif.
 
