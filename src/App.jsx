@@ -125,7 +125,8 @@ function App() {
 
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row items-center w-full max-w-7xl justify-center gap-8 lg:gap-12">
-        <div className="flex flex-col gap-6 items-center lg:items-start max-w-2xl text-center lg:text-left order-2 lg:order-1">
+        {/* --- UBAH BAGIAN INI --- */}
+        <div className="flex flex-col gap-6 items-center lg:items-start w-full lg:max-w-2xl text-center lg:text-left order-2 lg:order-1">
           {/* Social Media Icons */}
           <div className="flex items-center gap-4 sm:gap-6 w-full justify-center lg:justify-start">
             <a href="https://github.com/faizfznn" target="_blank" rel="noopener noreferrer">
@@ -141,16 +142,17 @@ function App() {
               <FaEnvelope className="text-white text-2xl sm:text-3xl hover:text-gray-400 transition-all duration-200 transform hover:scale-110" />
             </a>
           </div>
-
-          {/* Text Content */}
-          <div className="flex flex-col gap-4">
+          
+          {/* Title and Description */}
+          <div className="flex flex-col gap-4 w-full">
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-black leading-tight">
               Hi, I'm Faiz.
             </h1>
             <p className="text-white font-medium text-lg sm:text-xl md:text-2xl lg:text-[32px]">
               Undergraduate | CS @ UB
             </p>
-            <div className="min-h-[80px] sm:min-h-[120px] flex items-center">
+            {/* Pembungkus TextType sekarang memiliki tinggi minimum dan lebar penuh */}
+            <div className="min-h-[80px] sm:min-h-[120px] w-full flex items-center justify-center lg:justify-start">
               <TextType
                 as="p"
                 text={[
@@ -158,8 +160,8 @@ function App() {
                   "hi stego, im tyro",
                   "UI/UX Designer",
                 ]}
-                className="text-white font-medium text-base sm:text-lg md:text-xl lg:text-[32px] w-full max-w-full break-words"
-                typingSpeed={100}
+                className="text-white font-medium text-base sm:text-lg md:text-xl lg:text-[32px] w-full break-words" 
+                typingSpeed={70}
                 deletingSpeed={50}
                 pauseDuration={1500}
               />
