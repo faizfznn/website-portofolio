@@ -12,14 +12,16 @@ const CardProject = ({
   techStack = [], // Default value is an empty array
 }) => {
   return (
-    <div className="w-[314px] rounded-lg overflow-hidden border border-[#1A1E2B] bg-[linear-gradient(96deg,rgba(26,30,43,0.30)_-0.38,rgba(13,15,23,0.20)_49.96,rgba(53,62,95,0.20)_100.31),rgba(26,30,43,0.40)] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
+    <div
+      className="w-[314px] rounded-lg overflow-hidden border border-[#1A1E2B] bg-[linear-gradient(96deg,rgba(26,30,43,0.30)_-0.38,rgba(13,15,23,0.20)_49.96,rgba(53,62,95,0.20)_100.31),rgba(26,30,43,0.40)] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20"
+      style={{
+        background:
+          "linear-gradient(96deg, rgba(26, 30, 43, 0.30) -0.38%, rgba(13, 15, 23, 0.20) 49.96%, rgba(53, 62, 95, 0.20) 100.31%), rgba(26, 30, 43, 0.40)",
+      }}
+    >
       {/* Bagian Gambar Atas */}
       <div className="relative h-48 w-full">
-        <img
-          src={image}
-          alt={title}
-          className="h-full w-full object-cover"
-        />
+        <img src={image} alt={title} className="h-full w-full object-cover" />
         <div className="absolute top-3 right-3">
           <Tags>{category}</Tags>
         </div>
