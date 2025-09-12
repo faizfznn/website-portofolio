@@ -39,7 +39,7 @@ const TextType = ({
   }, [variableSpeed, typingSpeed]);
 
   const getCurrentTextColor = () => {
-    if (textColors.length === 0) return '#ffffff'; // Default color
+    if (textColors.length === 0) return '#ffffff';
     return textColors[currentTextIndex % textColors.length];
   };
 
@@ -147,7 +147,7 @@ const TextType = ({
       className: `text-type ${className}`,
       ...props
     },
-    <span className="text-type__content" style={{ color: getCurrentTextColor() }}>
+    <span className="text-type__content break-words" style={{ color: getCurrentTextColor() }}>
       {displayedText}
     </span>,
     showCursor && (

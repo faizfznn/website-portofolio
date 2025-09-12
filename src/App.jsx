@@ -4,9 +4,8 @@ import CardProject from "./component/CardProject";
 import CardExp from "./component/CardExp";
 import Button from "./component/Button";
 import "./App.css";
-import TextType from "./component/TextType"; // <-- 1. Impor komponen TextType
+import TextType from "./component/TextType";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import heroImage from "./assets/hero-section.png";
 import about from "./assets/about.jpg";
 import Footer from "./component/Footer";
@@ -14,17 +13,17 @@ import Footer from "./component/Footer";
 function App() {
   const cardDataProjects = [
     {
-      image: about, // Gunakan variabel gambar yang sudah diimpor
+      image: about,
       category: "UI/UX",
       title: "Lock Your Phone In",
       description:
         "A productivity web app that uses computer vision and object detection to monitor you through your camera.",
-      liveUrl: "#", // Ganti dengan link live demo
-      githubUrl: "#", // Ganti dengan link repository GitHub
+      liveUrl: "#",
+      githubUrl: "#",
       techStack: ["React.js", "TensorFlow.js"],
     },
     {
-      image: about, // Gunakan variabel gambar yang sudah diimpor
+      image: about,
       category: "Full-Stack",
       title: "Event Management System",
       description:
@@ -34,7 +33,7 @@ function App() {
       techStack: ["Node.js", "Express", "MongoDB"],
     },
     {
-      image: about, // Gunakan variabel gambar yang sudah diimpor
+      image: about,
       category: "Full-Stack",
       title: "Event Management System",
       description:
@@ -44,7 +43,7 @@ function App() {
       techStack: ["Node.js", "Express", "MongoDB"],
     },
     {
-      image: about, // Gunakan variabel gambar yang sudah diimpor
+      image: about,
       category: "Full-Stack",
       title: "Event Management System",
       description:
@@ -54,7 +53,7 @@ function App() {
       techStack: ["Node.js", "Express", "MongoDB"],
     },
     {
-      image: about, // Gunakan variabel gambar yang sudah diimpor
+      image: about,
       category: "Full-Stack",
       title: "Event Management System",
       description:
@@ -64,7 +63,7 @@ function App() {
       techStack: ["Node.js", "Express", "MongoDB"],
     },
     {
-      image: about, // Gunakan variabel gambar yang sudah diimpor
+      image: about,
       category: "Full-Stack",
       title: "Event Management System",
       description:
@@ -73,7 +72,6 @@ function App() {
       githubUrl: "#",
       techStack: ["Node.js", "Express", "MongoDB"],
     },
-    // Tambahkan data proyek lainnya di sini
   ];
 
   const expData = [
@@ -81,7 +79,7 @@ function App() {
       title: "Vice Head of Front End Department",
       date: "Jan 2025 - Present",
       organization: "BEM FILKOM UB",
-      tag: "Organizational", // <-- Tag untuk filter
+      tag: "Organizational",
       location: "Malang, Indonesia",
       responsibilities: [
         "Leading a team of 14 active members in frontend development initiatives.",
@@ -92,7 +90,7 @@ function App() {
       title: "Frontend Developer Intern",
       date: "Jun 2024 - Dec 2024",
       organization: "Tech Company",
-      tag: "Internship", // <-- Tag untuk filter
+      tag: "Internship",
       location: "Jakarta, Indonesia",
       responsibilities: [
         "Developed and maintained critical components for the main web application.",
@@ -103,7 +101,7 @@ function App() {
       title: "Freelance Web Developer",
       date: "2023 - Present",
       organization: "Self-Employed",
-      tag: "Work", // <-- Tag untuk filter
+      tag: "Work",
       location: "Malang, Indonesia",
       responsibilities: [
         "Translated Figma designs into responsive websites for local businesses.",
@@ -112,119 +110,87 @@ function App() {
     },
   ];
 
-  // --- LOGIKA FILTER DIMULAI DI SINI ---
-
-  // 2. State untuk menyimpan filter yang sedang aktif
+  // Filter logic
   const [activeFilter, setActiveFilter] = useState("All");
-
-  // 3. Daftar kategori untuk tombol filter
   const categories = ["All", "Organizational", "Internship", "Work"];
 
-  // 4. Filter data pengalaman berdasarkan state yang aktif
   const filteredExperiences =
     activeFilter === "All"
       ? expData
       : expData.filter((exp) => exp.tag === activeFilter);
 
   return (
-    <div className="bg-[#05060B] min-h-screen flex flex-col items-center py-10 px-4 md:px-16 gap-16">
+    <div className="bg-[#05060B] min-h-screen flex flex-col items-center py-6 sm:py-10 px-4 sm:px-8 md:px-16 gap-12 sm:gap-16">
       <Navbar />
 
-      {/* ===== 1. BUAT PEMBUNGKUS BARU UNTUK HERO SECTION ===== */}
-      <div className="flex flex-col md:flex-row items-center w-full max-w-7xl justify-center">
-        {/* Kolom Kiri: Teks dan Tombol */}
-        <div className="flex flex-col gap-6 items-start max-w-2xl text-center md:text-left">
-          {/* Ikon Sosial Media */}
-          <div className="flex items-center gap-6 w-full justify-center md:justify-start">
-            <a
-              href="https://github.com/faizfznn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub className="text-white text-3xl hover:text-gray-400 transition-all duration-200 transform hover:scale-110" />
+      {/* Hero Section */}
+      <div className="flex flex-col lg:flex-row items-center w-full max-w-7xl justify-center gap-8 lg:gap-12">
+        <div className="flex flex-col gap-6 items-center lg:items-start max-w-2xl text-center lg:text-left order-2 lg:order-1">
+          {/* Social Media Icons */}
+          <div className="flex items-center gap-4 sm:gap-6 w-full justify-center lg:justify-start">
+            <a href="https://github.com/faizfznn" target="_blank" rel="noopener noreferrer">
+              <FaGithub className="text-white text-2xl sm:text-3xl hover:text-gray-400 transition-all duration-200 transform hover:scale-110" />
             </a>
-            <a
-              href="https://www.linkedin.com/in/mfaizfauzan/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin className="text-white text-3xl hover:text-gray-400 transition-all duration-200 transform hover:scale-110" />
+            <a href="https://www.linkedin.com/in/mfaizfauzan/" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin className="text-white text-2xl sm:text-3xl hover:text-gray-400 transition-all duration-200 transform hover:scale-110" />
             </a>
-            <a
-              href="https://www.instagram.com/faizfznn/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram className="text-white text-3xl hover:text-gray-400 transition-all duration-200 transform hover:scale-110" />
+            <a href="https://www.instagram.com/faizfznn/" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="text-white text-2xl sm:text-3xl hover:text-gray-400 transition-all duration-200 transform hover:scale-110" />
             </a>
-
             <a href="mailto:faiz150605@gmail.com">
-              <FaEnvelope className="text-white text-3xl hover:text-gray-400 transition-all duration-200 transform hover:scale-110" />
+              <FaEnvelope className="text-white text-2xl sm:text-3xl hover:text-gray-400 transition-all duration-200 transform hover:scale-110" />
             </a>
           </div>
 
-          {/* Teks Utama */}
+          {/* Text Content */}
           <div className="flex flex-col gap-4">
-            <h1 className="text-white text-5xl md:text-[64px] font-black leading-tight md:leading-[72px]">
+            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-black leading-tight">
               Hi, I'm Faiz.
             </h1>
-            <p className="text-white font-medium text-2xl md:text-[32px]">
+            <p className="text-white font-medium text-lg sm:text-xl md:text-2xl lg:text-[32px]">
               Undergraduate | CS @ UB
             </p>
-            {/* <p className="text-white font-medium text-xl md:text-[32px]">
-              Interested in Software Engineering and UI/UX, focusing on creating
-              seamless digital experiences.
-            </p> */}
-            <TextType
-              as="p"
-              text={[
-                "Interested in Software Engineering and UI/UX, focusing on creating seamless digital experiences.",
-                "hi stego, im tyro",
-                "UI/UX Designer",
-              ]}
-              className="text-white font-medium text-xl md:text-[32px] min-w-[672px]" 
-              typingSpeed={100}
-              deletingSpeed={50}
-              pauseDuration={1500}
-            />
+            <div className="min-h-[80px] sm:min-h-[120px] flex items-center">
+              <TextType
+                as="p"
+                text={[
+                  "Interested in Software Engineering and UI/UX, focusing on creating seamless digital experiences.",
+                  "hi stego, im tyro",
+                  "UI/UX Designer",
+                ]}
+                className="text-white font-medium text-base sm:text-lg md:text-xl lg:text-[32px] w-full max-w-full break-words"
+                typingSpeed={100}
+                deletingSpeed={50}
+                pauseDuration={1500}
+              />
+            </div>
           </div>
 
-          <Button
-            href="https://docs.google.com/document/d/1MUVU7px2PdNLKCUQPGYkxkPEeKpSIObc74uD_KbiTvE/edit?usp=sharing"
-            target="_blank"
-          >
+          {/* CTA Button */}
+          <Button href="https://docs.google.com/document/d/1MUVU7px2PdNLKCUQPGYkxkPEeKpSIObc74uD_KbiTvE/edit?usp=sharing" target="_blank">
             Explore My Resume
           </Button>
         </div>
 
-        {/* Kolom Kanan: Gambar */}
-        <div className="flex-shrink-0 mt-10 md:mt-0">
+        {/* Hero Image */}
+        <div className="flex-shrink-0 order-1 lg:order-2">
           <img
             src={heroImage}
             alt="Faiz dan tim memenangkan kompetisi"
-            className="max-w-xs md:max-w-md lg:max-w-[500px] h-auto object-cover"
+            className="w-64 sm:w-80 md:w-96 lg:w-[500px] h-auto object-cover rounded-lg"
           />
         </div>
       </div>
 
-      {/* Bagian About Me */}
-      <div
-        id="about-me"
-        className="flex flex-col gap-8 w-full max-w-7xl mt-16 items-center"
-      >
-        {/* Judul "About Me" */}
-        <h2 className="text-white text-center font-sans text-5xl md:text-[64px] font-black leading-tight">
+      {/* About Me Section */}
+      <div id="about-me" className="flex flex-col gap-8 w-full max-w-7xl mt-8 sm:mt-16 items-center">
+        <h2 className="text-white text-center font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-black leading-tight">
           About Me
         </h2>
-
-        {/* Kontainer untuk konten (teks di kiri, gambar di kanan) */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-12 lg:gap-24 px-4">
-          {/* Kolom Kiri: Teks */}
-          <div className="flex flex-col gap-4 max-w-xl text-white">
-            <h3 className="text-4xl font-bold">Muhammad Faiz Fauzan</h3>
-
-            {/* Paragraf dipisah untuk memberi jarak */}
-            <div className="space-y-4 text-lg text-gray-300 font-medium">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 sm:gap-12 lg:gap-24 px-4">
+          <div className="flex flex-col gap-4 max-w-xl text-white order-2 lg:order-1">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center lg:text-left">Muhammad Faiz Fauzan</h3>
+            <div className="space-y-4 text-base sm:text-lg text-gray-300 font-medium text-center lg:text-left">
               <p>
                 Hi, you can call me Faiz. I am an undergraduate Computer Science
                 student at Brawijaya University from Indonesia. I love learning
@@ -246,62 +212,44 @@ function App() {
                 Email me for any inquiries at{" "}
                 <a
                   href="mailto:faiz150605@gmail.com"
-                  className="font-bold hover:underline"
+                  className="font-bold hover:underline text-white"
                 >
                   faiz150605@gmail.com
                 </a>
               </p>
             </div>
           </div>
-
-          {/* Kolom Kanan: Gambar */}
-          <div className="flex-shrink-0 mt-8 md:mt-0">
+          <div className="flex-shrink-0 order-1 lg:order-2">
             <img
               src={about}
               alt="Muhammad Faiz Fauzan"
-              className="rounded-lg w-72 lg:w-80 h-auto object-cover shadow-lg"
+              className="rounded-lg w-64 sm:w-72 lg:w-80 h-auto object-cover shadow-lg"
             />
           </div>
         </div>
       </div>
 
-      {/* Bagian Experience
-      <div
-        id="experience"
-        className="flex flex-col gap-6 w-full max-w-7xl mt-16 justify-center items-center"
-      >
-        <p className="self-stretch text-white text-center font-sans text-5xl md:text-[64px] font-black leading-tight md:leading-[72px]">
-          Experience
-        </p>
-        {expData.map((project, index) => (
-          <CardExp key={index} {...project} />
-        ))}
-      </div> */}
-
-      <div
-        id="experience"
-        className="flex flex-col gap-8 w-full max-w-7xl mt-16 justify-center items-center"
-      >
-        <p className="self-stretch text-white text-center font-sans text-5xl md:text-[64px] font-black leading-tight md:leading-[72px]">
+      {/* Experience Section */}
+      <div id="experience" className="flex flex-col gap-8 w-full max-w-7xl mt-8 sm:mt-16 justify-center items-center">
+        <p className="self-stretch text-white text-center font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-black leading-tight">
           Experience
         </p>
 
-        {/* ===== 5. TAMBAHKAN TOMBOL FILTER DI SINI ===== */}
-        <div className="flex items-center justify-center gap-4 flex-wrap">
+        {/* Filter Buttons */}
+        <div className="flex items-center justify-center gap-2 sm:gap-4 flex-wrap px-4">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
               className={`
-                w-fit py-2 px-5 flex justify-center items-center rounded-md text-white font-medium 
+                w-fit py-2 px-3 sm:px-5 flex justify-center items-center rounded-md text-white font-medium text-sm sm:text-base
                 transition-all duration-300 transform hover:scale-105
                 ${
                   activeFilter === category
-                    ? "border border-blue-400 bg-blue-600/50 brightness-125" // Style Aktif
-                    : "border border-white/10 hover:brightness-125" // Style Non-Aktif
+                    ? "border border-blue-400 bg-blue-600/50 brightness-125"
+                    : "border border-white/10 hover:brightness-125"
                 }
               `}
-              // Terapkan background gradient hanya jika tombol tidak aktif
               style={
                 activeFilter !== category
                   ? {
@@ -315,30 +263,24 @@ function App() {
             </button>
           ))}
         </div>
-        {/* ============================================== */}
-        
-        {/* 6. Tampilkan data yang sudah difilter */}
-        <div className="flex flex-col gap-6 w-full items-center">
-            {filteredExperiences.map((exp, index) => (
-              <CardExp key={index} {...exp} />
-            ))}
+
+        {/* Experience Cards */}
+        <div className="flex flex-col gap-6 w-full items-center px-4">
+          {filteredExperiences.map((exp, index) => (
+            <CardExp key={index} {...exp} />
+          ))}
         </div>
       </div>
 
-      {/* Bagian Project */}
-      <div
-        id="project"
-        className="flex flex-col gap-8 w-full max-w-7xl mt-16 justify-center items-center"
-      >
-        <p className="self-stretch text-white text-center font-sans text-5xl md:text-[64px] font-black leading-tight md:leading-[72px]">
+      {/* Projects Section */}
+      <div id="project" className="flex flex-col gap-8 w-full max-w-7xl mt-8 sm:mt-16 justify-center items-center">
+        <p className="self-stretch text-white text-center font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-black leading-tight">
           Projects
         </p>
-
-        {/* ===== CARA MEMANGGILNYA DI SINI ===== */}
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="flex flex-wrap justify-center gap-6 sm:gap-8 px-4">
           {cardDataProjects.map((project, index) => (
             <CardProject
-              key={index} // Kunci unik untuk setiap item
+              key={index}
               image={project.image}
               category={project.category}
               title={project.title}
@@ -350,7 +292,7 @@ function App() {
           ))}
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }
