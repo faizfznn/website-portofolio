@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./component/Navbar";
 import CardProject from "./component/CardProject";
 import CardExp from "./component/CardExp";
@@ -129,20 +129,32 @@ function App() {
         <div className="flex flex-col gap-6 items-center lg:items-start w-full lg:max-w-2xl text-center lg:text-left order-2 lg:order-1">
           {/* Social Media Icons */}
           <div className="flex items-center gap-4 sm:gap-6 w-full justify-center lg:justify-start">
-            <a href="https://github.com/faizfznn" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/faizfznn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaGithub className="text-white text-2xl sm:text-3xl hover:text-gray-400 transition-all duration-200 transform hover:scale-110" />
             </a>
-            <a href="https://www.linkedin.com/in/mfaizfauzan/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.linkedin.com/in/mfaizfauzan/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaLinkedin className="text-white text-2xl sm:text-3xl hover:text-gray-400 transition-all duration-200 transform hover:scale-110" />
             </a>
-            <a href="https://www.instagram.com/faizfznn/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.instagram.com/faizfznn/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram className="text-white text-2xl sm:text-3xl hover:text-gray-400 transition-all duration-200 transform hover:scale-110" />
             </a>
             <a href="mailto:faiz150605@gmail.com">
               <FaEnvelope className="text-white text-2xl sm:text-3xl hover:text-gray-400 transition-all duration-200 transform hover:scale-110" />
             </a>
           </div>
-          
+
           {/* Title and Description */}
           <div className="flex flex-col gap-4 w-full">
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-black leading-tight">
@@ -160,7 +172,7 @@ function App() {
                   "hi stego, im tyro",
                   "UI/UX Designer",
                 ]}
-                className="text-white font-medium text-base sm:text-lg md:text-xl lg:text-[32px] w-full break-words" 
+                className="text-white font-medium text-base sm:text-lg md:text-xl lg:text-[32px] w-full break-words"
                 typingSpeed={70}
                 deletingSpeed={50}
                 pauseDuration={1500}
@@ -169,7 +181,10 @@ function App() {
           </div>
 
           {/* CTA Button */}
-          <Button href="https://docs.google.com/document/d/1MUVU7px2PdNLKCUQPGYkxkPEeKpSIObc74uD_KbiTvE/edit?usp=sharing" target="_blank">
+          <Button
+            href="https://docs.google.com/document/d/1MUVU7px2PdNLKCUQPGYkxkPEeKpSIObc74uD_KbiTvE/edit?usp=sharing"
+            target="_blank"
+          >
             Explore My Resume
           </Button>
         </div>
@@ -185,13 +200,18 @@ function App() {
       </div>
 
       {/* About Me Section */}
-      <div id="about-me" className="flex flex-col gap-8 w-full max-w-7xl mt-8 sm:mt-16 items-center">
+      <div
+        id="about-me"
+        className="flex flex-col gap-8 w-full max-w-7xl mt-8 sm:mt-16 items-center"
+      >
         <h2 className="text-white text-center font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-black leading-tight">
           About Me
         </h2>
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8 sm:gap-12 lg:gap-24 px-4">
           <div className="flex flex-col gap-4 max-w-xl text-white order-2 lg:order-1">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center lg:text-left">Muhammad Faiz Fauzan</h3>
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center lg:text-left">
+              Muhammad Faiz Fauzan
+            </h3>
             <div className="space-y-4 text-base sm:text-lg text-gray-300 font-medium text-center lg:text-left">
               <p>
                 Hi, you can call me Faiz. I am an undergraduate Computer Science
@@ -232,7 +252,10 @@ function App() {
       </div>
 
       {/* Experience Section */}
-      <div id="experience" className="flex flex-col gap-8 w-full max-w-7xl mt-8 sm:mt-16 justify-center items-center">
+      <div
+        id="experience"
+        className="flex flex-col gap-8 w-full max-w-7xl mt-8 sm:mt-16 justify-center items-center"
+      >
         <p className="self-stretch text-white text-center font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-black leading-tight">
           Experience
         </p>
@@ -268,30 +291,41 @@ function App() {
 
         {/* Experience Cards */}
         <div className="flex flex-col gap-6 w-full items-center px-4">
-          {filteredExperiences.map((exp, index) => (
-            <CardExp key={index} {...exp} />
-          ))}
+          {filteredExperiences.length > 0 ? (
+            filteredExperiences.map((exp, index) => (
+              <CardExp key={index} {...exp} />
+            ))
+          ) : (
+            <p className="text-white text-center text-xl mt-8">Coming Soon</p>
+          )}
         </div>
       </div>
 
       {/* Projects Section */}
-      <div id="project" className="flex flex-col gap-8 w-full max-w-7xl mt-8 sm:mt-16 justify-center items-center">
+      <div
+        id="project"
+        className="flex flex-col gap-8 w-full max-w-7xl mt-8 sm:mt-16 justify-center items-center"
+      >
         <p className="self-stretch text-white text-center font-sans text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-black leading-tight">
           Projects
         </p>
         <div className="flex flex-wrap justify-center gap-6 sm:gap-8 px-4">
-          {cardDataProjects.map((project, index) => (
-            <CardProject
-              key={index}
-              image={project.image}
-              category={project.category}
-              title={project.title}
-              description={project.description}
-              liveUrl={project.liveUrl}
-              githubUrl={project.githubUrl}
-              techStack={project.techStack}
-            />
-          ))}
+          {cardDataProjects.length > 0 ? (
+            cardDataProjects.map((project, index) => (
+              <CardProject
+                key={index}
+                image={project.image}
+                category={project.category}
+                title={project.title}
+                description={project.description}
+                liveUrl={project.liveUrl}
+                githubUrl={project.githubUrl}
+                techStack={project.techStack}
+              />
+            ))
+          ) : (
+            <p className="text-white text-center text-xl mt-8">Coming Soon</p>
+          )}
         </div>
       </div>
       <Footer />
