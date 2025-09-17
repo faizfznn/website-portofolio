@@ -1,0 +1,76 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+@import "tailwindcss";
+
+* {
+  font-family: 'Satoshi', sans-serif;
+}
+
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.text-type__content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.text-type__cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  opacity: 1;
+}
+
+.text-type__cursor--hidden {
+  display: none;
+}
+
+/* Responsive utilities untuk mobile */
+@media (max-width: 640px) {
+  .text-type {
+    font-size: clamp(1rem, 4vw, 1.5rem) !important;
+    line-height: 1.4;
+  }
+  
+  /* Pastikan overflow horizontal tidak terjadi */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Smooth scrolling untuk navigasi */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Perbaikan untuk mobile viewport */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Tambahkan di dalam src/index.css */
+#about-me,
+#experience,
+#project {
+  scroll-margin-top: 120px; /* Sesuaikan nilainya dengan tinggi navbar Anda */
+}
