@@ -12,6 +12,7 @@ import Footer from "./component/Footer";
 import { expData } from "./data/experienceData";
 import { cardDataProjects } from "./data/projectData";
 import BackToTop from "./component/BackToTop";
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   // Filter logic
@@ -32,6 +33,7 @@ function App() {
   return (
     <div className="bg-[#05060B] min-h-screen flex flex-col items-center py-6 sm:py-10 px-4 sm:px-8 md:px-16 gap-12 sm:gap-16">
       <Navbar />
+      <Analytics/>
 
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row items-center w-full max-w-7xl justify-center gap-8 lg:gap-12">
