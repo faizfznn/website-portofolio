@@ -12,7 +12,9 @@ import Footer from "./component/Footer";
 import { expData } from "./data/experienceData";
 import { cardDataProjects } from "./data/projectData";
 import BackToTop from "./component/BackToTop";
-import { Analytics, SpeedInsights } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
 
 function App() {
   // Filter logic
