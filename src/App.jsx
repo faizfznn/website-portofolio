@@ -12,7 +12,7 @@ import Footer from "./component/Footer";
 import { expData } from "./data/experienceData";
 import { cardDataProjects } from "./data/projectData";
 import BackToTop from "./component/BackToTop";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   // Filter logic
