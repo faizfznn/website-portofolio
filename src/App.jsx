@@ -243,7 +243,7 @@ function App() {
         </div>
       </div>
       <Footer />
-      <BackToTop />
+      {/* <BackToTop /> */}
     </div>
   );
 }
