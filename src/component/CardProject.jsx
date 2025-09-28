@@ -20,6 +20,7 @@ const CardProject = ({
         transition-all duration-300 transform 
         hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20
         mx-auto sm:mx-0
+        flex flex-col
       "
       style={{
         background:
@@ -35,43 +36,46 @@ const CardProject = ({
       </div>
 
       {/* Bagian Konten Bawah */}
-      <div className="p-4 flex flex-col gap-2 text-white">
-        {/* Judul dan Ikon Link */}
-        <div className="flex flex-col justify-between items-start gap-2">
-          <h3 className="text-lg sm:text-xl font-bold leading-tight">{title}</h3>
-          <div className="flex items-center gap-3">
-            {liveUrl && liveUrl !== "#" && (
-              <a 
-                href={liveUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="p-1 rounded hover:bg-gray-700 transition-colors"
-                aria-label="View live demo"
-              >
-                <FiExternalLink className="text-xl sm:text-2xl text-gray-400 hover:text-white transition-colors" />
-              </a>
-            )}
-            {githubUrl && githubUrl !== "#" && (
-              <a 
-                href={githubUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="p-1 rounded hover:bg-gray-700 transition-colors"
-                aria-label="View GitHub repository"
-              >
-                <FaGithub className="text-xl sm:text-2xl text-gray-400 hover:text-white transition-colors" />
-              </a>
-            )}
+      <div className="p-4 flex flex-col h-full text-white">
+        {/* Bagian Judul dan Deskripsi */}
+        <div className="flex flex-col gap-3 flex-grow">
+          {/* Judul dan Ikon Link */}
+          <div className="flex flex-col justify-between items-start gap-2">
+            <h3 className="text-lg sm:text-xl font-bold leading-tight">{title}</h3>
+            <div className="flex items-center gap-3">
+              {liveUrl && liveUrl !== "#" && (
+                <a 
+                  href={liveUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-1 rounded hover:bg-gray-700 transition-colors"
+                  aria-label="View live demo"
+                >
+                  <FiExternalLink className="text-xl sm:text-2xl text-gray-400 hover:text-white transition-colors" />
+                </a>
+              )}
+              {githubUrl && githubUrl !== "#" && (
+                <a 
+                  href={githubUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-1 rounded hover:bg-gray-700 transition-colors"
+                  aria-label="View GitHub repository"
+                >
+                  <FaGithub className="text-xl sm:text-2xl text-gray-400 hover:text-white transition-colors" />
+                </a>
+              )}
+            </div>
           </div>
+
+          {/* Deskripsi */}
+          <p className="text-sm text-gray-300 font-medium leading-relaxed break-words">
+            {description}
+          </p>
         </div>
 
-        {/* Deskripsi */}
-        <p className="text-sm text-gray-300 font-medium leading-relaxed break-words">
-          {description}
-        </p>
-
-        {/* Tag Teknologi */}
-        <div className="flex flex-wrap gap-2 mt-2">
+        {/* Tag Teknologi - Positioned at bottom */}
+        <div className="flex flex-wrap gap-2 mt-4 justify-start">
           {techStack.map((tech, index) => (
             <Tags key={index}>{tech}</Tags>
           ))}

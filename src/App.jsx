@@ -11,6 +11,7 @@ import about from "./assets/about.jpg";
 import Footer from "./component/Footer";
 import { expData } from "./data/experienceData";
 import { cardDataProjects } from "./data/projectData";
+import BackToTop from "./component/BackToTop";
 
 function App() {
   // Filter logic
@@ -242,6 +243,7 @@ function App() {
         </div>
       </div>
       <Footer />
+      <BackToTop />
     </div>
   );
 }
