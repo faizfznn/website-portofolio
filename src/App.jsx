@@ -38,11 +38,8 @@ function App() {
       <Analytics/>
       <SpeedInsights/>
 
-      {/* Hero Section */}
       <div className="flex flex-col lg:flex-row items-center w-full max-w-7xl justify-center gap-8 lg:gap-12">
-        {/* --- UBAH BAGIAN INI --- */}
         <div className="flex flex-col gap-6 items-center lg:items-start w-full lg:max-w-2xl text-center lg:text-left order-2 lg:order-1">
-          {/* Social Media Icons */}
           <div className="flex items-center gap-4 sm:gap-6 w-full justify-center lg:justify-start">
             <a
               href="https://github.com/faizfznn"
@@ -70,7 +67,6 @@ function App() {
             </a>
           </div>
 
-          {/* Title and Description */}
           <div className="flex flex-col gap-4 w-full">
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-black leading-tight">
               Hi, I'm Faiz.
@@ -78,7 +74,6 @@ function App() {
             <p className="text-white font-medium text-lg sm:text-xl md:text-2xl lg:text-[32px]">
               Undergraduate | CS @ UB
             </p>
-            {/* Pembungkus TextType sekarang memiliki tinggi minimum dan lebar penuh */}
             <div className="min-h-[80px] sm:min-h-[120px] w-full flex items-center justify-center lg:justify-start">
               <TextType
                 as="p"
@@ -248,7 +243,6 @@ function App() {
         </div>
       </div>
       <Footer />
-      {/* <BackToTop /> */}
     </div>
   );
 }

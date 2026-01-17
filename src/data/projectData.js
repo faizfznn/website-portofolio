@@ -10,8 +10,8 @@ export const cardDataProjects = [
     title: "Mentra - Mental Health App",
     description:
       "A UI/UX case study for a mobile application designed to support users' mental well-being through guided journaling, mood tracking, and access to professional resources.",
-    liveUrl: "#", // Ganti dengan link Behance/Figma
-    githubUrl: "#", // Ganti dengan link Behance/Figma
+    liveUrl: "#", 
+    githubUrl: "#", 
     techStack: ["Figma"],
   },
   {
@@ -20,8 +20,8 @@ export const cardDataProjects = [
     title: "Mitsaq - Muslim Ta'aruf App",
     description:
       "A UI/UX case study for a matchmaking application tailored for the Muslim community, focusing on the ta'aruf process to find a life partner in a respectful manner.",
-    liveUrl: "#", // Ganti dengan link Behance/Figma
-    githubUrl: "#", // Ganti dengan link Behance/Figma
+    liveUrl: "#", 
+    githubUrl: "#", 
     techStack: ["Figma"],
   },
   {
@@ -30,8 +30,8 @@ export const cardDataProjects = [
     title: "Velora - Food Waste App",
     description:
       "A UI/UX concept for an application aimed at reducing food waste by connecting consumers with restaurants and stores offering surplus food at a discount.",
-    liveUrl: "#", // Ganti dengan link Behance/Figma
-    githubUrl: "#", // Ganti dengan link Behance/Figma
+    liveUrl: "#", 
+    githubUrl: "#", 
     techStack: ["Figma"],
   },
   {
@@ -40,8 +40,8 @@ export const cardDataProjects = [
     title: "Learn Sync - E-Learning App",
     description:
       "A UI/UX design for an e-learning platform that helps synchronize learning materials, assignments, and progress for students in a collaborative environment.",
-    liveUrl: "#", // Ganti dengan link Behance/Figma
-    githubUrl: "#", // Ganti dengan link Behance/Figma
+    liveUrl: "#", 
+    githubUrl: "#", 
     techStack: ["Figma"],
   },
 ];

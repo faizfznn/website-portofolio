@@ -33,7 +33,6 @@
     line-height: 1.4;
   }
   
-  /* Pastikan overflow horizontal tidak terjadi */
   * {
     max-width: 100%;
     box-sizing: border-box;
@@ -52,7 +51,6 @@ html {
   }
 }
 
-/* Animations */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -68,9 +66,8 @@ html {
   animation: fade-in 0.3s ease-out;
 }
 
-/* Tambahkan di dalam src/index.css */
 #about-me,
 #experience,
 #project {
-  scroll-margin-top: 120px; /* Sesuaikan nilainya dengan tinggi navbar Anda */
+  scroll-margin-top: 120px; 
 }
