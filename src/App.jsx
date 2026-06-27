@@ -11,10 +11,8 @@ import about from "./assets/about.jpg";
 import Footer from "./component/Footer";
 import { expData } from "./data/experienceData";
 import { cardDataProjects } from "./data/projectData";
-import BackToTop from "./component/BackToTop";
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/react';
-
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   // Filter logic
@@ -35,8 +33,8 @@ function App() {
   return (
     <div className="bg-[#05060B] min-h-screen flex flex-col items-center py-6 sm:py-10 px-4 sm:px-8 md:px-16 gap-12 sm:gap-16">
       <Navbar />
-      <Analytics/>
-      <SpeedInsights/>
+      <Analytics />
+      <SpeedInsights />
 
       <div className="flex flex-col lg:flex-row items-center w-full max-w-7xl justify-center gap-8 lg:gap-12">
         <div className="flex flex-col gap-6 items-center lg:items-start w-full lg:max-w-2xl text-center lg:text-left order-2 lg:order-1">
@@ -222,24 +220,9 @@ function App() {
           Projects
         </p>
         <div className="flex flex-wrap justify-center gap-6 sm:gap-8 px-4">
-          {cardDataProjects.length > 0 ? (
-            cardDataProjects.map((project, index) => (
-              <CardProject
-                key={index}
-                image={project.image}
-                category={project.category}
-                title={project.title}
-                description={project.description}
-                liveUrl={project.liveUrl}
-                githubUrl={project.githubUrl}
-                techStack={project.techStack}
-              />
-            ))
-          ) : (
-            <p className="text-white text-center text-4xl mt-8">
-              Maybe Next Year 😅
-            </p>
-          )}
+          {cardDataProjects.map((project, index) => (
+            <CardProject key={index} {...project} />
+          ))}
         </div>
       </div>
       <Footer />
